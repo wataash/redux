@@ -4,11 +4,14 @@ import { createStore } from 'redux'
 import Counter from './components/Counter'
 import counter from './reducers'
 
+console.log('index.js');
+
 const store = createStore(counter)
 const rootEl = document.getElementById('root')
 
 const render = () => ReactDOM.render(
   <Counter
+    dummy={console.log('index.js render()')}
     value={store.getState()}
     onIncrement={() => store.dispatch({ type: 'INCREMENT' })}
     onDecrement={() => store.dispatch({ type: 'DECREMENT' })}

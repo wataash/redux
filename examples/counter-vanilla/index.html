@@ -34,11 +34,15 @@
       var valueEl = document.getElementById('value')
 
       function render() {
+        console.log('render()', store.getState());
         valueEl.innerHTML = store.getState().toString()
       }
 
       render()
       store.subscribe(render)
+      store.subscribe(() => {
+          console.log('subscribe 2');
+      });
 
       document.getElementById('increment')
         .addEventListener('click', function () {

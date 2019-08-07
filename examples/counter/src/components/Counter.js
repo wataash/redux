@@ -1,9 +1,13 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
+console.log('Counter.js');
+
 class Counter extends Component {
   constructor(props) {
+    console.log('Counter constructor()');
     super(props);
+    // ?
     this.incrementAsync = this.incrementAsync.bind(this);
     this.incrementIfOdd = this.incrementIfOdd.bind(this);
   }
@@ -19,6 +23,7 @@ class Counter extends Component {
   }
 
   render() {
+    console.log('Counter.js render()');
     const { value, onIncrement, onDecrement } = this.props
     return (
       <p>
