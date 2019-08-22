@@ -7,7 +7,7 @@ class Counter extends Component {
   constructor(props) {
     console.log('Counter constructor()');
     super(props);
-    // ?
+    // to refer `this` in these functions
     this.incrementAsync = this.incrementAsync.bind(this);
     this.incrementIfOdd = this.incrementIfOdd.bind(this);
   }
@@ -50,6 +50,7 @@ class Counter extends Component {
 }
 
 Counter.propTypes = {
+  dummy: PropTypes.number.isRequired,
   value: PropTypes.number.isRequired,
   onIncrement: PropTypes.func.isRequired,
   onDecrement: PropTypes.func.isRequired
